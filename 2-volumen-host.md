@@ -11,24 +11,39 @@ docker run -d --name <nombre contenedor> -v <ruta carpeta host>:<ruta carpeta co
 ![Volúmenes](img/volumen-host.PNG)
 # COMPLETAR CON EL COMANDO
 
+docker run -d --name contenedorp3 -p 80:80 -v D:/2024-B/CONSTRUCCION/practica3/nginx/html:/u
+sr/share/nginx/html nginx:alpine
+
+![image](https://github.com/user-attachments/assets/0b13a37a-257e-4297-9e57-a99aead5f49b)
+
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+Si visitas http://localhost en tu navegador, verás el contenido de la carpeta html en el contenedor, que en este caso podría estar vacío o contener un archivo index.html inicial que hayas agregado.
 
 ### ¿Qué pasa con el archivo index.html del contenedor?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+Al montar un volumen tipo host, el archivo index.html predeterminado del contenedor es reemplazado por el contenido de la carpeta html en el host. Si la carpeta html del host está vacía, el contenedor no mostrará nada en http://localhost.
 
 ### Ir a https://html5up.net/ y descargar un template gratuito, descomprirlo dentro de tu computador en la carpeta html
 ### ¿Qué sucede al ingresar al servidor de nginx?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+Después de descargar y descomprimir la plantilla en la carpeta html, al ingresar al servidor de nginx nuevamente (http://localhost), verás la plantilla cargada y servida por el servidor nginx.
+
+![image](https://github.com/user-attachments/assets/7afca6d1-04a8-40c3-96dd-ffe91753936a)
 
 ### Eliminar el contenedor
 # COMPLETAR CON EL COMANDO
 
+docker rm -f contenedorp3
+
 ### ¿Qué sucede al crear nuevamente el mismo contenedor con volumen de tipo host a los directorios definidos anteriormente?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+Al volver a crear el contenedor, nginx cargará automáticamente los archivos existentes en la carpeta html del host, por lo que la plantilla de HTML5 UP aparecerá sin necesidad de copiar los archivos nuevamente.
 
 ### ¿Qué hace el comando pwd?
-# COMPLETAR CON LA RESPUESTA A LA PREGUNTA
+
+pwd imprime el directorio de trabajo actual en la terminal.
+
 Si quieres incluir el comando pwd dentro de un comando de Docker, lo puedes hacer de diferentes maneras dependiendo del shell que estés utilizando.
 
 
